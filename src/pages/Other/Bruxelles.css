@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    justify-content: flex-start; /* Aligns the content to the left */
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-left: 20%; /* You can adjust this value */
+  }
+  
+  .gallery img {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .modal-navigation {
+    position: relative; /* Relative positioning for buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-navigation img {
+    max-width: 100%;
+    max-height: 90vh;
+  }
+  
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent; /* Set background to transparent */
+    border: none; /* Remove border */
+    overflow: auto;
+    outline: none;
+  }
+  
+  .modal-navigation button {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  
+  /* Additional CSS for positioning the buttons */
+  .modal-navigation button.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .modal-navigation button.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .modal-navigation button.left-arrow {
+    left: -40px;
+  }
+  
+  .modal-navigation button.right-arrow {
+    right: -40px;
+  }
+  

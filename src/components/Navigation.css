@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "NimbusSans";
+  src: url("../fonts/nimbussannovtsembol.ttf") format("truetype");
+}
+
+nav {
+  position: fixed;
+  top: 4em;
+  left: 3em;
+  font-size: 24px;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  font-size: medium;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Aligns the text to the left */
+}
+
+li {
+  padding: 5px 0;
+  /* Adds some vertical spacing between list items */
+}
+
+nav ul {
+  text-align: left;
+}
+
+nav ul li {
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  /* Removes the underline from the links */
+  color: black;
+  /* Sets the link text color to black */
+}
+
+
+.menu-label {
+  cursor: pointer;
+  /* Changes the cursor to a hand when hovering */
+  /* Add other styling as needed */
+}
+
+.menu-label:hover,
+.sub-menu li a:hover {
+  color: blue;
+}
+
+.sub-menu {
+  list-style-type: none;
+  padding-left: 20px;
+  max-height: 0;
+  /* Initially, the sub-menu will be hidden */
+  overflow: hidden;
+  /* Prevents content from being visible */
+  transition: max-height 0.5s ease;
+  /* Transition effect */
+}
+
+/* Class to open the sub-menu */
+.sub-menu-open {
+  max-height: 200px;
+  /* Set this value based on your need */
+}
+
+.sub-menu li {
+  font-size: 14px;
+  position: relative;
+  padding-left: 1em;
+}
+
+.sub-menu li:before {
+  content: '-';
+  position: absolute;
+  left: 0;
+}
+
+/* Existing CSS */
+.headline {
+  font-family: "NimbusSans", sans-serif;
+  /* other styles */
+  font-weight: 800;
+  color: black;
+  /* Initial color */
+  text-decoration: none;
+  /* Removes the default underline */
+  display: block;
+  /* Makes the link a block element, so it takes up the full width */
+  text-align: left;
+  /* Centers the text */
+}
+
+.name {
+  font-size: 1.5em;
+  color: inherit;
+  /* Uses the same color as the parent element, or you can specify a color */
+
+}
+
+.headline:hover .name {
+  background: repeating-linear-gradient(0deg,
+      blue 0%,
+      blue 25%,
+      black 25%,
+      black 50%,
+      blue 50%,
+      blue 75%,
+      black 75%,
+      black 100%);
+  background-size: 10px 10px;
+  /* Adjust the size of the squares */
+  -webkit-background-clip: text;
+  /* Apply background only to the text for Webkit browsers */
+  background-clip: text;
+  /* Apply background only to the text */
+  -webkit-text-fill-color: transparent;
+  /* Make the text color transparent so the background shows through for Webkit browsers */
+  text-fill-color: transparent;
+  /* Make the text color transparent so the background shows through */
+}

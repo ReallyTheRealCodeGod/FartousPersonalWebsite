@@ -1,0 +1,8 @@
+/* Madsfisker.css */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Takes up the full viewport height */
+  }
+  

@@ -1,0 +1,6 @@
+
+.video-description {
+  width: 640px; /* Match the iframe width */
+  text-align: left;
+  padding-top: 20px; /* Add some spacing between the video and the text */
+}

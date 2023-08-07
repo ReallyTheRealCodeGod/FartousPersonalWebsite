@@ -1,0 +1,29 @@
+.info-container {
+    padding: 5em;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  h2, h3 {
+    color: #333;
+  }
+  
+  p, li {
+    color: #555;
+  }
+  
+  ul {
+    padding-left: 0; /* Removing left padding */
+    list-style-type: none; /* Removing bullets */
+    text-align: center;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+  }
+  

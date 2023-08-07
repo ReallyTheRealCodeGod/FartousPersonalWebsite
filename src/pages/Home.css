@@ -1,0 +1,33 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em;
+  }
+  
+  .image-container {
+    text-align: left;
+  }
+  
+  .image-container img {
+    width: 30em;
+    height: 30em;
+    object-fit:contain;
+  }
+  
+  .text-container {
+    text-align: left; /* Align the text to the left */
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: -5em; /* Remove any margin at the top */
+    padding: 0; /* Remove padding to align text completely to the left */
+  }
+  

@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Navigation from './components/Navigation'; // Import the Navigation component
+import Photography from './pages/Photography';
+import Films from './pages/Films'
+import Info from './pages/Info';
+import Bruxelles from './pages/Other/Bruxelles';
+import Paris from './pages/Other/Paris';
+import Portraits from './pages/Other/Portraits';
+import Madsfisker from './pages/MusicVideo/Madsfisker';
+import REx from './pages/MusicVideo/REx'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navigation /> {/* Include the Navigation component here */}
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/photography" element={<Photography />} />
+        <Route path="/films" element={<Films />} />
+        <Route path="/info" element={<Info />} />
+        <Route path="/bruxelles" element={<Bruxelles />}></Route>
+        <Route path="/paris" element={<Paris />}></Route>
+        <Route path="/portraits" element={<Portraits />}></Route>
+        <Route path="/rex" element={<REx />}></Route>
+        <Route path="/madsfisker" element={<Madsfisker />}></Route>
+
+      </Routes>
+    </Router>
   );
 }
 
