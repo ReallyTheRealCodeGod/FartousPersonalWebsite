@@ -1,8 +1,18 @@
-/* Madsfisker.css */
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Takes up the full viewport height */
-  }
-  
+.mads-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content horizontally */
+  justify-content: center; /* center content vertically */
+  min-height: 100vh; /* takes full viewport height */
+  text-align: center; /* center the text inside each child */
+}
+
+.video-description {
+  width: 640px; /* Match the iframe width */
+  text-align: left;
+}
+
+iframe {
+  border: none;
+}
+

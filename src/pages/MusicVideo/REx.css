@@ -1,6 +1,18 @@
+.rex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content horizontally */
+  justify-content: center; /* center content vertically */
+  min-height: 100vh; /* takes full viewport height */
+  text-align: center; /* center the text inside each child */
+}
 
 .video-description {
   width: 640px; /* Match the iframe width */
   text-align: left;
-  padding-top: 20px; /* Add some spacing between the video and the text */
 }
+
+iframe {
+  border: none;
+}
+

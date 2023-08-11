@@ -27,13 +27,14 @@ function Navigation() {
           <li><Link to="/madsfisker">Mads Fisker</Link></li>
           {/* Other music video links */}
         </ul>
+{/*         
         <li className="menu-label" onClick={() => setOtherMenuOpen(!otherMenuOpen)}>Other</li>
         <ul className={`sub-menu ${otherMenuOpen ? 'sub-menu-open' : ''}`}>
           <li><Link to="/bruxelles">Bruxelles</Link></li>
           <li><Link to="/paris">Paris</Link></li>
           <li><Link to="/portraits">Portraits</Link></li>
-          {/* Other music video links */}
-        </ul>
+        </ul> */}
+
         {/* <li><Link to="/photography">Photography</Link></li> */}
         <li ><Link to="/info">Info</Link></li>
 

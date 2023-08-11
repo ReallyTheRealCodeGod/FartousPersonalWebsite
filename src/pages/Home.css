@@ -1,33 +1,329 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5em;
+}
+
+.image-container {
+  position:absolute;
+  text-align: left;
+  width: 30em;
+  height: 30em;
+}
+
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  animation: imgGlitch 10s infinite alternate-reverse;
+  filter: contrast(1.2) brightness(0.9);
+}
+
+
+
+.text-container {
+  text-align: left;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+  padding: 0;
+}
+@keyframes imgGlitch {
+  0% { 
+    transform: translate(1%, 2%); 
+    filter: hue-rotate(5deg) contrast(9%) brightness(9%) saturate(12%);
+    opacity: 0.95; 
   }
-  
-  .home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5em;
+  25% { 
+    transform: translate(-1%, -1%); 
+    filter: hue-rotate(-5deg) contrast(105%) brightness(105%) saturate(80%);
+    opacity: 0.92; 
+    mix-blend-mode: screen; /* Blend with blue color */
+    background-color: rgba(0, 0, 255, 0.3); /* Blue color overlay */
   }
-  
-  .image-container {
-    text-align: left;
+  50% { 
+    transform: translate(0.5%, 1%); 
+    filter: hue-rotate(0deg) contrast(100%) brightness(100%) saturate(10%);
+    opacity: 1; 
+    background-color: blue;
   }
-  
-  .image-container img {
-    width: 30em;
-    height: 30em;
-    object-fit:contain;
+  75% { 
+    transform: translate(-0.5%, 0%); 
+    filter: hue-rotate(2deg) contrast(97%) brightness(9%) saturate(10%);
+    opacity: 0.97; 
+    mix-blend-mode: multiply; /* Blend with blue color */
+    background-color: rgba(0, 0, 255, 0.2); /* Blue color overlay */
   }
-  
-  .text-container {
-    text-align: left; /* Align the text to the left */
-    font-size: 12px;
-    font-style: normal;
-    font-weight: bold;
-    margin-top: -5em; /* Remove any margin at the top */
-    padding: 0; /* Remove padding to align text completely to the left */
+  100% { 
+    transform: translate(0.2%, -0.2%); 
+    filter: hue-rotate(-2deg) contrast(102%) brightness(105%) saturate(90%);
+    opacity: 0.99; 
+    background-color: blue;
+
   }
-  
+}
+
+.image-container::before, .image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../../public/images/taleb.webp');
+  background-size: cover;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  background-color: blue;
+}
+
+.image-container::before {
+  animation: glitchEffect1 4s infinite alternate-reverse;
+  filter: hue-rotate(90deg) brightness(0.6) opacity(90%);
+  background-color: blue;
+
+}
+
+.image-container::after {
+  animation: glitchEffect2 3.5s infinite alternate-reverse;
+  filter: hue-rotate(-90deg) brightness(0.6) opacity(90%);
+  background-color: blue;
+
+}
+
+@keyframes glitchEffect1 {
+  0% { 
+    transform: translateX(5%) translateY(-2%) scale(0.98); 
+    background-color: rgba(0, 0, 255, 0.7); /* Blue */
+    opacity: 0.8;
+  }
+  10% { 
+    transform: translateX(-5%) translateY(3%) scale(1.02); 
+    background-color: rgba(255, 255, 255, 0.8); /* White */
+    opacity: 0.9;
+  }
+  20% { 
+    transform: translateX(3%) translateY(2%) scale(0.99); 
+    background-color: rgba(0, 0, 0, 0.6); /* Black */
+    opacity: 0.88;
+  }
+  30% { 
+    transform: translateX(-2%) translateY(1.5%) scale(1.03);
+    background-color: rgba(0, 0, 255, 0.6); /* Blue */
+    opacity: 0.85;
+  }
+  40% { 
+    transform: translateX(4%) translateY(-1%) scale(1.04); 
+    background-color: rgba(255, 255, 255, 0.7); /* White */
+    opacity: 0.92;
+  }
+  50% { 
+    transform: translateX(-3%) translateY(-2%) scale(1.05); 
+    background-color: rgba(0, 0, 0, 0.7); /* Black */
+    opacity: 0.9;
+  }
+  60% { 
+    transform: translateX(2%) translateY(2%) scale(0.97); 
+    background-color: rgba(0, 0, 255, 0.8); /* Blue */
+    opacity: 0.87;
+  }
+  70% { 
+    transform: translateX(-1%) translateY(-3%) scale(0.96); 
+    background-color: rgba(255, 255, 255, 0.9); /* White */
+    opacity: 0.9;
+  }
+  80% { 
+    transform: translateX(3%) translateY(1%) scale(1.01); 
+    background-color: rgba(0, 0, 0, 0.8); /* Black */
+    opacity: 0.95;
+  }
+  90% { 
+    transform: translateX(-4%) translateY(-1.5%) scale(1.02);
+    background-color: rgba(0, 0, 255, 0.6); /* Blue */
+    opacity: 0.87;
+  }
+  100% { 
+    transform: translateX(5%) translateY(2%) scale(0.98); 
+    background-color: rgba(255, 255, 255, 0.7); /* White */
+    opacity: 0.88;
+  }
+}
+
+
+
+@keyframes glitchEffect1 {
+  0% { 
+      transform: translateY(-2%) scale(1.01); 
+      background-color: rgba(0, 0, 255, 0.5);  /* Blue */
+      opacity: 0.9;
+  }
+  10% { 
+      transform: translateY(-1%) scale(1.005); 
+      background-color: rgba(255, 255, 255, 0.5);  /* White */
+      opacity: 0.92;
+  }
+  20% { 
+      transform: translateY(1%) scale(1.02); 
+      background-color: rgba(0, 0, 0, 0.5);  /* Black */
+      opacity: 0.88;
+  }
+  30% { 
+      transform: translateY(0.5%) scale(1.015); 
+      background-color: rgba(0, 0, 255, 0.6);  /* Blue */
+      opacity: 0.9;
+  }
+  40% { 
+      transform: translateY(-0.5%) scale(1.01); 
+      background-color: rgba(255, 255, 255, 0.6);  /* White */
+      opacity: 0.85;
+  }
+  50% { 
+      transform: translateY(-1%) scale(1.015); 
+      background-color: rgba(0, 0, 0, 0.4);  /* Black */
+      opacity: 0.95;
+  }
+  60% { 
+      transform: translateY(1%) scale(1.01); 
+      background-color: rgba(0, 0, 255, 0.7);  /* Blue */
+      opacity: 0.92;
+  }
+  70% { 
+      transform: translateY(-0.5%) scale(1.02); 
+      background-color: rgba(255, 255, 255, 0.7);  /* White */
+      opacity: 0.9;
+  }
+  80% { 
+      transform: translateY(0.5%) scale(1.01); 
+      background-color: rgba(0, 0, 0, 0.6);  /* Black */
+      opacity: 0.88;
+  }
+  90% { 
+      transform: translateY(-1%) scale(1.015); 
+      background-color: rgba(0, 0, 255, 0.8);  /* Blue */
+      opacity: 0.95;
+  }
+  100% { 
+      transform: translateY(-1.5%) scale(1.02); 
+      background-color: rgba(255, 255, 255, 0.8);  /* White */
+      opacity: 0.9;
+  }
+}
+
+
+.image-container .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../../public/images/taleb.webp');
+  background-size: cover;
+  mix-blend-mode: screen;
+}
+
+.image-container .overlay-1 {
+  animation: glitchEffect1 4s infinite alternate-reverse;
+  filter: hue-rotate(15deg) brightness(0.7) blur(100%);
+}
+
+.image-container .overlay-2 {
+  animation: glitchEffect2 3.5s infinite alternate-reverse;
+  filter: hue-rotate(30deg) brightness(0.7) blur(100%);
+}
+
+/* Continuation for 10 overlays, you can create additional glitch effects or reuse the existing ones with different timings and iterations */
+
+.image-container .overlay-3 {
+  animation: glitchEffect1 4.5s infinite alternate-reverse;
+  filter: hue-rotate(45deg) brightness(0.7) blur(100%);
+  color: blue;
+  background-color: blue;
+}
+
+.image-container .overlay-4 {
+  animation: glitchEffect2 5s infinite alternate-reverse;
+  filter: hue-rotate(60deg) brightness(0.7) blur(100%);
+}
+
+.image-container .overlay-5 {
+  animation: glitchEffect1 4.8s infinite alternate-reverse;
+  filter: hue-rotate(75deg) brightness(0.1) blur(100%);
+}
+
+.image-container .overlay-6 {
+  animation: glitchEffect2 4.2s infinite alternate-reverse;
+  filter: hue-rotate(90deg) brightness(0.7) blur(100%);
+}
+
+.image-container .overlay-7 {
+  animation: glitchEffect1 5.3s infinite alternate-reverse;
+  filter: hue-rotate(105deg) brightness(0.7) blur(100%);
+}
+
+.image-container .overlay-8 {
+  animation: glitchEffect2 3.9s infinite alternate-reverse;
+  filter: hue-rotate(1deg) brightness(0.1) blur(10%);
+}
+
+.image-container .overlay-9 {
+  animation: glitchEffect1 4.4s infinite alternate-reverse;
+  filter: hue-rotate(135deg) brightness(0.7) blur(100%);
+}
+
+.image-container .overlay-10 {
+  animation: glitchEffect1 4.4s infinite alternate-reverse;
+  filter: hue-rotate(135deg) brightness(0.7) blur(100%);
+}
+
+.image-container .overlay-11 {
+  animation: glitchEffect2 5.2s infinite alternate-reverse;
+  filter: hue-rotate(150deg) brightness(0.7) blur(100%);
+}
+
+.image-container:hover img {
+  filter: hue-rotate(-190deg) contrast(110%) brightness(110%) saturate(150%);
+}
+
+.image-wrapper .image-container:hover ~ .image-container img, 
+.image-wrapper .image-container:hover img {
+  filter: hue-rotate(-190deg) contrast(110%) brightness(110%) saturate(150%);
+}
+.image-wrapper .image-container:hover ~ .image-container .overlay-1,
+.image-wrapper .image-container:hover ~ .image-container .overlay-2,
+.image-wrapper .image-container:hover ~ .image-container .overlay-3,
+.image-wrapper .image-container:hover ~ .image-container .overlay-4,
+.image-wrapper .image-container:hover ~ .image-container .overlay-5,
+.image-wrapper .image-container:hover ~ .image-container .overlay-6,
+.image-wrapper .image-container:hover ~ .image-container .overlay-7,
+.image-wrapper .image-container:hover ~ .image-container .overlay-8,
+.image-wrapper .image-container:hover ~ .image-container .overlay-9,
+.image-wrapper .image-container:hover ~ .image-container .overlay-10,
+.image-wrapper .image-container:hover ~ .image-container .overlay-11,
+.image-wrapper .image-container:hover .overlay-1,
+.image-wrapper .image-container:hover .overlay-2,
+.image-wrapper .image-container:hover .overlay-3,
+.image-wrapper .image-container:hover .overlay-4,
+.image-wrapper .image-container:hover .overlay-5,
+.image-wrapper .image-container:hover .overlay-6,
+.image-wrapper .image-container:hover .overlay-7,
+.image-wrapper .image-container:hover .overlay-8,
+.image-wrapper .image-container:hover .overlay-9,
+.image-wrapper .image-container:hover .overlay-10,
+.image-wrapper .image-container:hover .overlay-11
+{
+  mix-blend-mode: screen;
+  background-color: rgba(0, 0, 255, 0.8); /* Intensified blue */
+  transform: skewX(5deg); /* A slight skew for a distorted feeling */
+}
