@@ -5,9 +5,11 @@ function Madsfisker() {
   return (
     <div className="mads-container">
       <iframe
-        src="https://player.vimeo.com/video/554714722?autoplay=1" // Replace with your Vimeo video ID
-        width="640"
-        height="360"
+        src="https://player.vimeo.com/video/554714722" // Replace with your Vimeo video ID
+        style={{
+          width: 'var(--iframe-width)',
+          height: 'var(--iframe-height)',
+        }}
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen
         title="Vimeo Video"

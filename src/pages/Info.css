@@ -6,7 +6,19 @@
     line-height: 1.5;
     text-align: center;
   }
-  
+
+/* Media query for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+  .info-container {
+    padding-top: 15em !important; /* Adjust the value as needed for more distance */
+    padding: 5em;
+    max-width: 800px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
   h2, h3 {
     color: #333;
   }

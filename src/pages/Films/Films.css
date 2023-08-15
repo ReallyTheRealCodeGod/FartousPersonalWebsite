@@ -5,15 +5,28 @@
     height: 100vh; 
 }
 
+@media (max-width: 768px) {
+.carousel-container {
+    padding-top: 7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+}
+
 .carousel-wrapper {
     width: 50%;
 }
+
 
 .carousel-image-container {
     position: relative;
     padding-top: 56.25%; 
     overflow: hidden;
 }
+
+
 
 .carousel-image {
     position: absolute;
@@ -30,6 +43,14 @@
     margin-top: 20px; 
 }
 
+@media (max-width: 768px) {
+.image-description {
+    width: 640px; 
+    text-align: left;
+    margin-top: 20px; 
+    max-width: 13.3em;
+}
+}
 
 .arrow {
     cursor: pointer;

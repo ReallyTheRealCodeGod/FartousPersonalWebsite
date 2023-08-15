@@ -7,6 +7,13 @@
   text-align: center; /* center the text inside each child */
 }
 
+:root {
+  --iframe-width: 100%; /* Adjust the width as needed */
+  --iframe-height: 360px; /* Adjust the height as needed */
+}
+
+
+
 .video-description {
   width: 640px; /* Match the iframe width */
   text-align: left;
@@ -14,5 +21,28 @@
 
 iframe {
   border: none;
+}
+@media (max-width: 768px) {
+  .mads-container {
+    padding-top: 9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center content horizontally */
+    justify-content: center; /* center content vertically */
+    min-height: 100vh;
+     /* takes full viewport height */
+    text-align: center; /* center the text inside each child */
+  }
+
+  .video-description {
+    width: 380px; /* Match the iframe width */
+    text-align: left;
+  }
+  
+
+  :root {
+    --iframe-width: 100%; /* Adjust the width as needed */
+    --iframe-height: 180px; /* Adjust the height as needed */
+  }
 }
 

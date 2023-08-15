@@ -6,8 +6,10 @@ function REx() {
     <div className="rex-container">
       <iframe
         src="https://www.youtube.com/embed/0o1oJkCd2GA"
-        width="640"
-        height="360"
+        style={{
+          width: 'var(--iframe-width)',
+          height: 'var(--iframe-height)',
+        }}
         allow="autoplay; fullscreen; picture-in-picture"
         allowFullScreen
         title="YouTube Video"
